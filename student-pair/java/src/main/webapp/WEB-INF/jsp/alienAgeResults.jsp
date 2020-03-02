@@ -12,6 +12,17 @@
 </head>
 <body>
 
+	<section id="main-content">
+	
+	<img src= "img/${param.planet}.jpg" alt = "${param.planet}"/>
+	<c:out value="${param.earthAge}"/>
+	<c:out value = "${ageCalculator.alienAge}"/>
+	
+	
+	</section>
+
+
+
 </body>
 </html>
 

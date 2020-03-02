@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.ssg.model.AlienAgeCalculator;
+import com.techelevator.ssg.model.AlienWeightCalculator;
 
 @Controller
-public class AlienAgeCalculatorController {
-
+public class AlienCalculatorController {	
 	
-
 	// Weight Mappings
+
 	@RequestMapping("/alienWeight")
 	public String displayAlienWeightPage() {
 		return "alienWeight";
@@ -20,16 +20,14 @@ public class AlienAgeCalculatorController {
 	
 
 	@RequestMapping("/alienWeightResults")
-	public String showAlienWeightResults(@RequestParam String planet, @RequestParam int weight, ModelMap map) {
+	public String showAlienWeightResults(@RequestParam String planet, @RequestParam double earthWeight, ModelMap map) {
 
-		
-		
+
+		AlienWeightCalculator weightCalculator = new AlienWeightCalculator(planet, earthWeight);
+		map.put("weightCalculator", weightCalculator);
 		return "alienWeightResults";
+	
 	}
-
-	
-	
-	
 	
 	// Age Mappings
 	
@@ -38,7 +36,7 @@ public class AlienAgeCalculatorController {
 		return "alienAge";
 	}
 	
-	@RequestMapping("alienAgeResults")
+	@RequestMapping("/alienAgeResults")
 	public String showAlienAgeResults(@RequestParam String planet, @RequestParam double earthAge, ModelMap map) {
 		
 		AlienAgeCalculator ageCalculator = new AlienAgeCalculator(planet, earthAge);

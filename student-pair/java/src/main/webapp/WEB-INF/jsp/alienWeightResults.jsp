@@ -12,6 +12,16 @@
 </head>
 <body>
 
+	<section id = "main-content" >
+	
+	<img src= "img/${param.planet}.jpg" alt = "${param.planet}"/>
+	<c:out value ="${weightCalculator.alienWeight}"/>
+	
+	
+	
+	</section>
+
+
 </body>
 </html>
 

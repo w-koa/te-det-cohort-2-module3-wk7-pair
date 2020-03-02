@@ -3,44 +3,60 @@ package com.techelevator.ssg.model;
 public class AlienAgeCalculator {
 
 	private String planet;
-	private double age;
+	private double earthAge;
+	private double alienAge;
 	
-	public AlienAgeCalculator(String planet, double age) {
+	public AlienAgeCalculator(String planet, double earthAge) {
 		this.planet = planet;
-		this.age = age;
-		
+		this.earthAge = earthAge;
+		this.alienAge = calculateAlienAge();
 	
 	}
 	
 	public double calculateAlienAge() {
-		double earthAgeInDays = age * 365.26;
-		double alienAge = 0;
-		switch(planet) {
+		double earthAgeInDays = this.earthAge * 365.26;
 		
-		case("Mercury"): {
-			alienAge = earthAgeInDays / 87.96;
+		switch(this.planet) {
+		
+		case("mercury"): {
+			this.alienAge = earthAgeInDays / 87.96;
+			break;
 		}
-		case("Venus"): {
-			alienAge = earthAgeInDays / 224.68;
+		case("venus"): {
+			this.alienAge = earthAgeInDays / 224.68;
+			break;
 		}
-		case("Mars"): {
-			alienAge = earthAgeInDays / 686.98;
+		case("mars"): {
+			this.alienAge = earthAgeInDays / 686.98;
+			break;
 		}
-		case("Jupiter"): {
-			alienAge = age / 11.862;
+		case("jupiter"): {
+			this.alienAge = this.earthAge / 11.862;
+			break;
 		}
-		case("Saturn"): {
-			alienAge = age / 29.456;
+		case("saturn"): {
+			this.alienAge = this.earthAge / 29.456;
+			break;
 		}
-		case("Uranus"): {
-			alienAge = age / 84.07;
+		case("uranus"): {
+			this.alienAge = this.earthAge / 84.07;
+			break;
 		}
-		case("Neptune"): {
-			alienAge = age / 164.81;
+		case("neptune"): {
+			this.alienAge = this.earthAge / 164.81;
+			break;
 		}
 
 		}
+		return this.alienAge;
+	}
+
+	public double getAlienAge() {
 		return alienAge;
+	}
+
+	public void setAlienAge(double alienAge) {
+		this.alienAge = alienAge;
 	}
 
 }
