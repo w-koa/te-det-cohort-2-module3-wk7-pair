@@ -16,7 +16,7 @@
 	<section id= "main-content">
 		<div style = "display: flex; ">
 			<img src="img/${param.planet}.jpg" alt="${param.planet}" />
-			<h2>Traveling by ${param.transportType} you will reach ${param.planet} in ${timeResult}
+			<h2>Traveling by ${param.transportType} you will reach ${param.planet} in ${travelCalculator.travelTimeResult}
 			years. You will be ${travelCalculator.ageResult} years old.</h2>
 		</div>
 	
