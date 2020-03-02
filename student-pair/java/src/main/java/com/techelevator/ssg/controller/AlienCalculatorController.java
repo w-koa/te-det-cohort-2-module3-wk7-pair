@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.ssg.model.AlienAgeCalculator;
+import com.techelevator.ssg.model.AlienTravelCalculator;
 import com.techelevator.ssg.model.AlienWeightCalculator;
 
 @Controller
@@ -55,10 +56,14 @@ public class AlienCalculatorController {
 		
 	}
 	
-	@RequestMapping("travelTimeResults")
-	public String showTravelTimeResults() {
-
+	@RequestMapping("/driveTimeResults")
+	public String showTravelTimeResults(@RequestParam String planet, @RequestParam String transportMethod,
+			@RequestParam double earthAge, ModelMap map) {
+		
+		AlienTravelCalculator travelCalculator = new AlienTravelCalculator(planet, transportMethod, earthAge);
+		map.put("travelCalculator", travelCalculator);
 		return "driveTimeResults";
+
 	}
 	
 	

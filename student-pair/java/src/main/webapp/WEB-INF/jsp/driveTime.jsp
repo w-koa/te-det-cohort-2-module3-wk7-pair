@@ -15,7 +15,7 @@
 		<header><h2 class="centered">Alien Travel Calculator</h2></header>
 	
 
-		<c:url var="formAction" value="/travelTimeCalculator" />
+		<c:url var="formAction" value="/driveTimeResults" />
 
 		<form method="GET" action="${formAction}">
 
@@ -46,8 +46,8 @@
 			
 			</div>
 			<div class="formInputGroup">
-				<label for="weight">Enter Your Age:</label> <input
-					type="text" name="age" />
+				<label for="earthAge">Enter Your Age:</label> <input
+					type="text" name="earthAge" />
 			</div>
 			<button>
 				<input class="formSubmitButton" type="submit"

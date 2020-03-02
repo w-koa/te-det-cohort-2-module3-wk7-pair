@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    
+
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <!DOCTYPE html>
@@ -13,12 +13,12 @@
 <body>
 
 	<section id="main-content">
-	
-	<img src= "img/${param.planet}.jpg" alt = "${param.planet}"/>
-	<c:out value="${param.earthAge}"/>
-	<c:out value = "${ageCalculator.alienAge}"/>
-	
-	
+		<div style="display: flex">
+			<img src="img/${param.planet}.jpg" alt="${param.planet}" />
+			<h2>If you are <c:out value="${param.earthAge}" /> years old on planet Earth,
+			then you are <c:out value="${ageCalculator.alienAge}" /> ${param.planet} years old.</h2>
+		</div>
+
 	</section>
 
 
