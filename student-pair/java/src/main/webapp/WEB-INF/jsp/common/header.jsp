@@ -28,6 +28,8 @@
             <c:url var = "alienWeight" value = "/alienWeight"/>
             <li><a href="${alienWeight}">Alien Weight</a></li>
             <c:url var = "driveTime" value = "/driveTime"/>
-            <li><a href="${driveTime}">Drive Time</a></li>               
+            <li><a href="${driveTime}">Drive Time</a></li>
+            <c:url var = "spaceForum" value = "/spaceForum"/>
+            <li><a href="${spaceForum}">Space Forum</a></li>                 
         </ul>
     </nav>
