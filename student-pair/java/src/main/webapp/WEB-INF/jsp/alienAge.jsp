@@ -12,15 +12,16 @@
 <body>
 	<section id="main-content">
 
-		<header><h2 class="centered">Alien Age Calculator</h2></header>
-		
+		<header>
+			<h2 class="centered">Alien Age Calculator</h2>
+		</header>
+
 		<c:url var="formAction" value="/alienAgeResults" />
 
 		<form method="GET" action="${formAction}">
 
 			<div class="formInputGroup">
-				<label for="planet">Choose a Planet:</label> <select
-					name="planet">
+				<label for="planet">Choose a Planet:</label> <select name="planet">
 					<option value="mercury">Mercury</option>
 					<option value="venus">Venus</option>
 					<option value="mars">Mars</option>
@@ -31,13 +32,12 @@
 				</select>
 			</div>
 			<div class="formInputGroup">
-				<label for="age">Enter Your Earth Age:</label> <input
-					type="text" name="earthAge" />
+				<label for="age">Enter Your Earth Age:</label> <input type="text"
+					name="earthAge" />
 			</div>
-			
-				<input class="formSubmitButton" type="submit"
-					value="Calculate Age" />
-			
+
+			<input class="formSubmitButton" type="submit" value="Calculate Age" />
+
 
 		</form>
 

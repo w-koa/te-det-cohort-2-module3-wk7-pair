@@ -12,14 +12,15 @@
 <body>
 	<section id="main-content">
 
-		<header><h2 class="centered">Alien Weight Calculator</h2></header>
+		<header>
+			<h2 class="centered">Alien Weight Calculator</h2>
+		</header>
 		<c:url var="formAction" value="/alienWeightResults" />
 
 		<form method="GET" action="${formAction}">
 
 			<div class="formInputGroup">
-				<label for="planet">Choose a Planet:</label> <select
-					name="planet">
+				<label for="planet">Choose a Planet:</label> <select name="planet">
 					<option value="mercury">Mercury</option>
 					<option value="venus">Venus</option>
 					<option value="mars">Mars</option>
@@ -30,10 +31,11 @@
 				</select>
 			</div>
 			<div class="formInputGroup">
-				<label for="weight">Enter Your Earth Weight:</label> <input type="text"
-					name="earthWeight"/>
+				<label for="weight">Enter Your Earth Weight:</label> <input
+					type="text" name="earthWeight" />
 			</div>
-			<button><input class="formSubmitButton" type="submit" value="Calculate Weight" /></button>
+			<input class="formSubmitButton" type="submit"
+				value="Calculate Weight" />
 
 		</form>
 
