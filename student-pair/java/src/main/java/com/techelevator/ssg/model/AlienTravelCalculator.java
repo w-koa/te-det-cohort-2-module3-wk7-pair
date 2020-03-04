@@ -49,13 +49,13 @@ public class AlienTravelCalculator {
 		case("mars"): {
 			travelTimeResult = 	48678219 / travelRate / 24 / 365; 
 		}
-		case("Jupiter"): {
+		case("jupiter"): {
 			travelTimeResult = 	390674710 / travelRate / 24 / 365; 
 		}
-		case("Saturn"): {
+		case("saturn"): {
 			travelTimeResult = 	792248270 / travelRate / 24 / 365; 
 		}
-		case("Uranus"): {
+		case("uranus"): {
 			travelTimeResult = 	1692662530 / travelRate / 24 / 365; 
 		}
 		case("neptune"): {
