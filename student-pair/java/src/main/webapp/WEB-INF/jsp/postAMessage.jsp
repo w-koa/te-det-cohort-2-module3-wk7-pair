@@ -32,6 +32,8 @@
 				<label for="message">Message:</label> <textarea 
 					name="message" cols="50" rows="10"></textarea>
 			</div>
+			<input class="formSubmitButton" type="submit"
+					value="Submit!" />
 		</form>
 	</section>
 </body>

@@ -21,9 +21,9 @@
 		<div class="posts">
 			<c:forEach var="post" items="${forumPosts}">
 				<div class="post">
-					<h3>
+					<h4>
 						<c:out value="${post.subject}"/>
-					</h3>
+					</h4>
 					<p>
 					 	<c:out value="by ${post.username} on ${post.datePosted}"/>
 					</p>

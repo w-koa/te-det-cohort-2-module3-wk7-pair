@@ -1,4 +1,4 @@
-﻿body {
+body {
 	background-color: #000000;
 	font-family: sans-serif;
 }
@@ -160,7 +160,7 @@ form div label {
 	color: black;
 }
 
-form button {
+.formSubmitButton {
 	text-align: center;
 	margin-left: 224px;
 }
