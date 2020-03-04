@@ -16,9 +16,9 @@
 			<h2 class="centered">New Geek Post</h2>
 		</header>
 
-		<c:url var="formAction" value="/forumPostSuccess" />
+		<c:url var="formAction" value="/postAMessage" />
 
-		<form method="GET" action="${formAction}">
+		<form method="POST" action="${formAction}">
 
 			<div class="formInputGroup">
 				<label for="userName">User Name:</label> <input type="text"

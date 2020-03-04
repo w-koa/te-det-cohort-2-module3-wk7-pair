@@ -1,5 +1,6 @@
 package com.techelevator.ssg.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,17 +31,19 @@ public class SpaceForumController {
 		return "postAMessage";
 	}
 	
+	// Redirects back to Forum Home
 	@RequestMapping(path="/postAMessage", method = RequestMethod.POST)
-	public String displayPostAMessageInput(ForumPost post) {
+	public String displayPostAMessageInput(@RequestParam String username,
+			@RequestParam String subject, @RequestParam String message) {
+		
+		ForumPost post = new ForumPost();
+		post.setUsername(username);
+		post.setSubject(subject);
+		post.setMessage(message);
+		post.setDatePosted(LocalDateTime.now());
 		forumDao.save(post);
 		return "redirect:/spaceForum";
 	}
-	
-	@RequestMapping(path="/spaceForumResult", method=RequestMethod.GET)
-	public String displaySpaceAfterPost(ModelMap map) {
-		List<ForumPost> forumPosts = forumDao.getAllPosts();
-		map.put("forumPosts", forumPosts);
-		return "spaceForum";
-	}
+
 	
 }
