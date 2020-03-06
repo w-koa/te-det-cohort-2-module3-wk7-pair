@@ -279,3 +279,7 @@ section#calculatorResult h2 {
 #table th, td{
 	color: black;
 }
+
+#table img {
+	width: auto;
+}

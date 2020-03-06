@@ -27,6 +27,7 @@ public class SpaceStoreController {
 	public String displayStore(HttpSession session) {
 		
 		List<Product> products = productDao.getAllProducts();
+		// Creates a new ShoppingCart if none exists
 		if ((session.getAttribute("shoppingCart") == null)) {
 			session.setAttribute("shoppingCart", new ShoppingCart());
 		}
@@ -49,6 +50,8 @@ public class SpaceStoreController {
 	
 	@RequestMapping(path="/product/detail", method = RequestMethod.POST)
 	public String buyProduct(@RequestParam int quantity, HttpSession session) {
+		
+		// Creates a new ShoppingCart if none exists
 		if ((session.getAttribute("shoppingCart") == null)) {
 			session.setAttribute("shoppingCart", new ShoppingCart());
 		}
