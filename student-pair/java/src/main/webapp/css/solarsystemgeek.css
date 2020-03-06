@@ -253,3 +253,29 @@ section#calculatorResult h2 {
 	color: white;
 	text-align: center;
 }
+
+
+/* Store CSS */
+
+.productInfo {
+	display: flex;
+	padding: 20px;
+}
+
+#main-content #blue {
+	color: blue;
+}
+.productInfo img {
+	width: auto;
+}
+
+.productPrice {
+	color: blue;
+}
+.productDescription {
+	margin-left: 0px;
+}
+
+#table th, td{
+	color: black;
+}

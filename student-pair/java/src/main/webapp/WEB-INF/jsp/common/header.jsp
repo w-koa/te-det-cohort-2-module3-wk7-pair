@@ -30,6 +30,8 @@
             <c:url var = "driveTime" value = "/driveTime"/>
             <li><a href="${driveTime}">Drive Time</a></li>
             <c:url var = "spaceForum" value = "/spaceForum"/>
-            <li><a href="${spaceForum}">Space Forum</a></li>                 
+            <li><a href="${spaceForum}">Space Forum</a></li>  
+            <c:url var = "spaceStore" value = "/store"/>
+            <li><a href="${spaceStore}">Space Store</a></li>              
         </ul>
     </nav>

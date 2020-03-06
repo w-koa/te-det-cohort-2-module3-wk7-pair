@@ -7,7 +7,7 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Space Forum</title>
 </head>
 <body>
 	<section id="main-content">
