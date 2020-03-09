@@ -39,7 +39,7 @@ public class SpaceStoreController {
 
 	@RequestMapping(path = "/product/detail", method = RequestMethod.GET)
 	public String displayProductDetails(@RequestParam long id, ModelMap map, HttpSession session) {
-		
+
 		// Gets product that was clicked and loads information into detail variables
 		Product product = productDao.getProductById(id);
 		map.addAttribute("product", product);
@@ -75,8 +75,9 @@ public class SpaceStoreController {
 			ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("shoppingCart");
 			List<CartItem> shoppingCartList = shoppingCart.getShoppingCartItems();
 			int cartIndex = itemFound(shoppingCartList, id);
-			
-			// If item is found, sets new quantity at index, sets new itemTotal, and sets new GrandTotal
+
+			// If item is found, sets new quantity at index, sets new itemTotal, and sets
+			// new GrandTotal
 			if (cartIndex != -1) {
 
 				cartItem = shoppingCartList.get(cartIndex);
@@ -121,14 +122,15 @@ public class SpaceStoreController {
 
 	@RequestMapping(path = "/checkout", method = RequestMethod.GET)
 	public String displayCheckout() {
-		
+
 		return "storeCheckout";
 	}
+
 	@RequestMapping(path = "/checkout", method = RequestMethod.POST)
-	public String processCheckout(@RequestParam String customerName, @RequestParam String addressPart1, 
-			@RequestParam(required = false) String addressPart2, @RequestParam String city, 
-			@RequestParam String state, @RequestParam String zipcode) {
-		
+	public String processCheckout(@RequestParam String customerName, @RequestParam String addressPart1,
+			@RequestParam(required = false) String addressPart2, @RequestParam String city, @RequestParam String state,
+			@RequestParam String zipcode) {
+
 		return "storeThanks";
 	}
 }
