@@ -16,34 +16,44 @@
 		</header>
 
 		<div>
-			<table id="table">
-				<tr>
-					<th></th>
-					<th>Name</th>
-					<th>Price</th>
-					<th>Qty.</th>
-					<th>Total</th>
-				</tr>
-				<c:forEach var="item" items="${shoppingCart.productsInCart}">
-					<tr>
-						<td><img src="img/${item.key.imageName}" alt="productImage" /></td>
-						<td><c:out value="${item.key.name}" /></td>
-						<td><c:out value="${item.key.price}" /></td>
-						<td><c:out value="${item.value}" /></td>
-						<td><c:out value="${shoppingCart.productTotal}" /></td>
-					</tr>
-					
 
-				</c:forEach>
+				<table id="table">
+					<tr>
+						<th></th>
+						<th id="extraSpace">Name</th>
+						<th>Price</th>
+						<th>Qty.</th>
+						<th>Total</th>
+					</tr>
+					<c:forEach var="item" items="${shoppingCart.shoppingCartItems}">
+						<tr>
+							<td><img src="img/${item.imageName}" alt="productImage" /></td>
+							<td id="extraSpace"><c:out value="${item.productName}" /></td>
+							<td><c:out value="${item.price}" /></td>
+							<td><c:out value="${item.quantity}" /></td>
+							<td><c:out value="${item.itemTotal}" /></td>
+						</tr>
+
+
+					</c:forEach>
 					<tr>
 						<td></td>
-						<td></td>
+						<td id="extraSpace"></td>
 						<td></td>
 						<th>Grand Total:</th>
-						<td><c:out value="${shoppingCart.grandTotal}" /></td>
+						<td><c:out value="${shoppingCart.cartGrandTotal }" /></td>
 					</tr>
-			</table>
-
+					<tr>
+						<td></td>
+						<td id="extraSpace"></td>
+						<td></td>
+						<th></th>
+						<c:url var="checkoutUrl" value="/checkout"/>
+						<td><a href ="${checkoutUrl}">Check Out!</a></td>
+					</tr>
+				</table>
+				
+			
 
 		</div>
 

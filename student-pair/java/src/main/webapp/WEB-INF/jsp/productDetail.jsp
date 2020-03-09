@@ -25,11 +25,12 @@
 				<h2 id="blue">${product.price}</h2>
 				<p class="productDescription">${product.description}</p>
 			
-			
-				<form action="" method="POST">
-					<input type="hidden" name="name" value="${product.name}" /> <input
-						type="hidden" name="price" value ="${product.price}" /> <input
-						type="number" name="quantity" id="quantity" /> <label>Quantity
+				<c:url value='/product/detail' var = 'processAddItemUrl' />
+				<form action="${processAddItemUrl}" method="POST">
+					<input type="hidden" name="name" value="${product.name}" /> 
+					<input type="hidden" name="price" value ="${product.price}" /> 
+					<input type="hidden" name="id" value="${product.id}" />
+						<input type="number" name="quantity" id="quantity" min = "0" max="255"/> <label>Quantity
 						to buy: <input type="submit" value="Add to Cart"
 						class="formSubmitButton" />
 					</label>

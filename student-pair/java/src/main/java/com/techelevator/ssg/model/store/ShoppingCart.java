@@ -1,63 +1,47 @@
 package com.techelevator.ssg.model.store;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart {
 
-	private Map<Product, Integer> productsInCart = new HashMap<Product, Integer>();
-	private DollarAmount itemTotal;
-	private DollarAmount cartTotal;
 	
+	private int orderId;
+	private List<CartItem> shoppingCartItems = new ArrayList<>();
+	private DollarAmount cartGrandTotal;
 	
-	public DollarAmount getProductTotal() {
-		int productTotal = 0;
-		for (Product product : productsInCart.keySet()) {
-			int quantity = productsInCart.get(product);
-			DollarAmount price = product.getPrice();
-			int cents = price.getCents();
-			int dollars = price.getDollars();
-			cents = cents + (dollars * 100);
-			
-			productTotal = quantity * cents;
-		}
-		return new DollarAmount(productTotal);
-	}
-	
-	public DollarAmount getGrandTotal() {
+	public DollarAmount getGrandTotal(List<CartItem> shoppingCartItems) {
 		int grandTotal = 0;
-		for (Product product : productsInCart.keySet()) {
-			int quantity = productsInCart.get(product);
-			DollarAmount price = product.getPrice();
-			int cents = price.getCents();
-			int dollars = price.getDollars();
-			cents = cents + (dollars * 100);
+		for (CartItem item : shoppingCartItems) {
 			
-			grandTotal = grandTotal + (quantity * cents);
+			grandTotal = grandTotal + item.getItemTotal().hashCode();
 			
 		}
 		return new DollarAmount(grandTotal);
 	}
 	
 	// Gets and Sets
-	public Map<Product, Integer> getProductsInCart() {
-		return productsInCart;
+
+	public DollarAmount getCartGrandTotal() {
+		return cartGrandTotal;
 	}
-	public void setProductsInCart(Map<Product, Integer> productsInCart) {
-		this.productsInCart = productsInCart;
-	}
-	public DollarAmount getCartTotal() {
-		return cartTotal;
-	}
-	public void setCartTotal(DollarAmount cartTotal) {
-		this.cartTotal = cartTotal;
+	public void setCartGrandTotal(DollarAmount cartGrandTotal) {
+		this.cartGrandTotal = cartGrandTotal;
 	}
 
-	public DollarAmount getItemTotal() {
-		return itemTotal;
+	public int getOrderId() {
+		return orderId;
 	}
 
-	public void setItemTotal(DollarAmount itemTotal) {
-		this.itemTotal = itemTotal;
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public List<CartItem> getShoppingCartItems() {
+		return shoppingCartItems;
+	}
+
+	public void setShoppingCartItems(List<CartItem> shoppingCartItems) {
+		this.shoppingCartItems = shoppingCartItems;
 	}
 }

@@ -275,9 +275,16 @@ section#calculatorResult h2 {
 .productDescription {
 	margin-left: 0px;
 }
-
+#table {
+	padding: 20px;
+}
 #table th, td{
 	color: black;
+	text-align: left;
+	
+}
+#table #extraSpace {
+	width: 350px;
 }
 
 #table img {
