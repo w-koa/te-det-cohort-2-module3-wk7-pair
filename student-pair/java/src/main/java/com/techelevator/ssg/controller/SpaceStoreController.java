@@ -84,16 +84,16 @@ public class SpaceStoreController {
 				DollarAmount newItemTotal = cartItem.getItemTotal(cartItem.getPrice(), newQuantity);
 				cartItem.setQuantity(newQuantity);
 				cartItem.setItemTotal(newItemTotal);
-				DollarAmount newGrandTotal = shoppingCart.getGrandTotal(shoppingCartList);
-				shoppingCart.setCartGrandTotal(newGrandTotal);
+
 			} else {
 
 				// If item is not found, adds to cart and sets new GrandTotal
 				shoppingCartList.add(cartItem);
 				shoppingCart.setShoppingCartItems(shoppingCartList);
-				DollarAmount newGrandTotal = shoppingCart.getGrandTotal(shoppingCartList);
-				shoppingCart.setCartGrandTotal(newGrandTotal);
 			}
+			// Sets new GrandTotal before saving session
+			DollarAmount newGrandTotal = shoppingCart.getGrandTotal(shoppingCartList);
+			shoppingCart.setCartGrandTotal(newGrandTotal);
 
 			session.setAttribute("shoppingCart", shoppingCart);
 		}
@@ -129,6 +129,6 @@ public class SpaceStoreController {
 			@RequestParam(required = false) String addressPart2, @RequestParam String city, 
 			@RequestParam String state, @RequestParam String zipcode) {
 		
-		return "storeCheckout";
+		return "storeThanks";
 	}
 }

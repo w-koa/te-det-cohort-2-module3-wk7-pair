@@ -16,7 +16,6 @@
 		</header>
 
 		<div>
-
 				<table id="table">
 					<tr>
 						<th></th>
@@ -52,9 +51,6 @@
 						<td><a href ="${checkoutUrl}">Check Out!</a></td>
 					</tr>
 				</table>
-				
-			
-
 		</div>
 
 	</section>

@@ -24,11 +24,11 @@
 				</div>
 				<div>
 					<label for="addressPart1">Address Line 1<input type="text"
-						name="addressPart1" id="addressPart1" /></label>
+						name="addressPart1" id="addressPart1" placeholder = "Street Address"/></label>
 				</div>
 				<div>
 					<label for="addressPart2">Address Line 2<input type="text"
-						name="addressPart2" id="addressPart2" /></label>
+						name="addressPart2" id="addressPart2" placeholder="Apartment No."/></label>
 				</div>
 				<div>
 					<label for="city">City<input type="text" name="city"

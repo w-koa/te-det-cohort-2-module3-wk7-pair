@@ -6,4 +6,5 @@ import org.springframework.stereotype.Component;
 public interface ShoppingCartDao {
 
 	public void saveOrder();
+	public void saveOrderItems();
 }
