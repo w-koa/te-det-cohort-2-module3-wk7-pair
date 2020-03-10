@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.ssg.model.store.CartItem;
 import com.techelevator.ssg.model.store.DollarAmount;
+import com.techelevator.ssg.model.store.JDBCOrderDao;
 import com.techelevator.ssg.model.store.JdbcProductDao;
+import com.techelevator.ssg.model.store.Order;
 import com.techelevator.ssg.model.store.Product;
 import com.techelevator.ssg.model.store.ShoppingCart;
 
@@ -22,6 +24,8 @@ public class SpaceStoreController {
 
 	@Autowired
 	private JdbcProductDao productDao;
+	@Autowired
+	private JDBCOrderDao orderDao;
 
 	@RequestMapping(path = "/store", method = RequestMethod.GET)
 	public String displayStore(HttpSession session) {
@@ -108,7 +112,6 @@ public class SpaceStoreController {
 				return i;
 			}
 		}
-
 		return -1;
 	}
 
@@ -129,8 +132,30 @@ public class SpaceStoreController {
 	@RequestMapping(path = "/checkout", method = RequestMethod.POST)
 	public String processCheckout(@RequestParam String customerName, @RequestParam String addressPart1,
 			@RequestParam(required = false) String addressPart2, @RequestParam String city, @RequestParam String state,
-			@RequestParam String zipcode) {
+			@RequestParam String zipcode, HttpSession session) {
+		
+		ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("shoppingCart");
+		Order order = new Order();
+		int newId = orderDao.getNextId();
+		order.setOrderId(newId);
+		order.setCustomerName(customerName);
+		order.setAddressPart1(addressPart1);
+		order.setAddressPart2(addressPart2);
+		order.setCity(city);
+		order.setState(state);
+		order.setZipcode(zipcode);
+		
+		orderDao.saveOrder(order);
+		orderDao.saveOrderItems(shoppingCart, order.getOrderId());
+		
 
+		return "redirect:/thanks";
+	}
+	
+	@RequestMapping(path = "/thanks", method = RequestMethod.GET)
+	public String displayThanksPage(HttpSession session) {
+		session.invalidate();
+		
 		return "storeThanks";
 	}
 }

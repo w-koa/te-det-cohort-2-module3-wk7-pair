@@ -14,8 +14,13 @@
 		<header>
 			<h2 class="centered">Solar System Geek Gift Shop</h2>
 		</header>
-
-		<div>
+		<c:if test="${shoppingCart.shoppingCartItems.size() < 1}">
+		<h2 class="centered"><c:out value = "Shopping cart is empty!"/></h2>
+		test
+		</c:if>
+		<c:if test="${shoppingCart.shoppingCartItems.size() > 0}">
+		test
+			<div>
 				<table id="table">
 					<tr>
 						<th></th>
@@ -46,13 +51,15 @@
 						<td></td>
 						<td id="extraSpace"></td>
 						<td></td>
-						<th></th>
-						<c:url var="checkoutUrl" value="/checkout"/>
-						<td><a href ="${checkoutUrl}">Check Out!</a></td>
+						<c:url var="continueShopping" value="/store" />
+						<td><a href="${continueShopping}">Continue Shopping</a></td>
+
+						<c:url var="checkoutUrl" value="/checkout" />
+						<td><a href="${checkoutUrl}">Check Out!</a></td>
 					</tr>
 				</table>
-		</div>
-
+			</div>
+		</c:if>
 	</section>
 
 
