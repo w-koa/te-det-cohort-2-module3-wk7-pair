@@ -14,12 +14,10 @@
 		<header>
 			<h2 class="centered">Solar System Geek Gift Shop</h2>
 		</header>
-		<c:if test="${shoppingCart.shoppingCartItems.size() < 1}">
-		<h2 class="centered"><c:out value = "Shopping cart is empty!"/></h2>
-		test
+		<c:if test="${shoppingCart.shoppingCartItems.size() == null}">
+		<h2 class="centered">Oops, shopping cart is empty! Also, you're not supposed to be here!!</h2>
 		</c:if>
 		<c:if test="${shoppingCart.shoppingCartItems.size() > 0}">
-		test
 			<div>
 				<table id="table">
 					<tr>

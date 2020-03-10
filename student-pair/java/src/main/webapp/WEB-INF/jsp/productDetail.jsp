@@ -21,8 +21,8 @@
 				<img src="${productImage}" alt="${product.name}" />
 			</div>
 			<div>
-				<h2>${product.name}</h2>
-				<h2 id="blue">${product.price}</h2>
+				<h2 style="padding-left: 0px; padding-top: 0px; margin: 0px">${product.name}</h2>
+				<h2 style="padding: 0px; margin: 0px" id="blue">${product.price}</h2>
 				<p class="productDescription">${product.description}</p>
 			
 				<c:url value='/product/detail' var = 'processAddItemUrl' />

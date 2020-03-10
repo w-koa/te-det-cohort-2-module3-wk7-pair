@@ -14,9 +14,14 @@
 		<header>
 			<h2 class="centered">Solar System Geek Gift Shop</h2>
 		</header>
-		<div><p> Thanks for shopping with Solar System Geek! Enjoy your gifts of brain learning!</p>
-		</div>
-		<div class="centered"><img src="img/DogeScienceGeek.jpg" alt="doge"/>
+		<div>
+			<div style="text-align: -webkit-center">
+				<p style="text-align: center">Thanks for shopping with Solar System Geek! Enjoy your gifts
+					of brain learning!</p>
+			</div>
+			<div class="centered">
+				<img style="padding-bottom: 20px" src="img/DogeScienceGeek.jpg" alt="doge" />
+			</div>
 		</div>
 	</section>
 
